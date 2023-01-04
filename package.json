@@ -1,0 +1,28 @@
+{
+  "name": "memotest-pokemon",
+  "version": "1.0.0",
+  "description": "juego de memoria hecho con pokemones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iara-Pou/memotest-pokemon.git"
+  },
+  "keywords": [
+    "js",
+    "HTML",
+    "Bootstrap",
+    "memotest"
+  ],
+  "author": "Iara Pou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iara-Pou/memotest-pokemon/issues"
+  },
+  "homepage": "https://github.com/Iara-Pou/memotest-pokemon#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

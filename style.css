@@ -7,3 +7,26 @@
     border-radius: 10px;
 }
 
+.pickachu{
+    background:  whitesmoke url(/img/pickachu.png) no-repeat center/70% ;
+}
+
+.bulbasaur{
+    background:  whitesmoke url(/img/bulbasaur.png) no-repeat center/60% ;
+}
+
+.charmander{
+    background:  whitesmoke url(/img/charmander.png) no-repeat center/70% ;
+}
+
+.caterpie{
+    background:  whitesmoke url(/img/caterpie.png) no-repeat center/60% ;
+}
+
+.pidgey{
+    background:  whitesmoke url(/img/pidgey.png) no-repeat center/60% ;
+}
+
+.squirtle{
+    background:  whitesmoke url(/img/squirtle.png) no-repeat center/60% ;
+}

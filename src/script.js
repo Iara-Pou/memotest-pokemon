@@ -22,4 +22,14 @@ function asignarEstilos(pokemonesMezclados) {
 }
 
 }
+
+function mostrarPokemon($tarjeta) {
+    reproducirSonido();
+    $tarjeta.classList.remove("tarjeta");
+}
+
+function esconderPokemon($tarjeta){
+    $tarjeta.classList.add("tarjeta");
+}
+
 }

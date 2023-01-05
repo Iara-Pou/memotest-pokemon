@@ -32,4 +32,7 @@ function esconderPokemon($tarjeta){
     $tarjeta.classList.add("tarjeta");
 }
 
+function reproducirSonido(){
+    const audio = new Audio("../audio/click.mp3");
+    audio.play();
 }

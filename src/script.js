@@ -23,6 +23,7 @@ function asignarEstilos(pokemonesMezclados) {
 }
 
 $pantalla.onclick = function (e) {
+    const $tarjeta = e.target;
 }
 }
 

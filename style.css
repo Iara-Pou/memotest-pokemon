@@ -2,11 +2,6 @@
     height: 30vh;
 }
 
-.tarjeta{
-    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50% ;
-    border-radius: 10px;
-}
-
 .pickachu{
     background:  whitesmoke url(/img/pickachu.png) no-repeat center/70% ;
 }
@@ -29,4 +24,8 @@
 
 .squirtle{
     background:  whitesmoke url(/img/squirtle.png) no-repeat center/60% ;
+}
+
+.tarjeta{
+    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50% ;
 }

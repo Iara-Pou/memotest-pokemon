@@ -22,6 +22,8 @@ function asignarEstilos(pokemonesMezclados) {
     })
 }
 
+$pantalla.onclick = function (e) {
+}
 }
 
 function mostrarPokemon($tarjeta) {

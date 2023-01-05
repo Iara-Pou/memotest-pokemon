@@ -28,4 +28,7 @@
 
 .tarjeta{
     background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50% ;
+
+.tarjeta-deshabilitada{
+    filter: brightness(0.5);
 }

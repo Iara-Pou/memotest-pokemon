@@ -27,8 +27,11 @@
 }
 
 .tarjeta{
-    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50% ;
+    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50%;
+    cursor:pointer;
+}
 
 .tarjeta-deshabilitada{
     filter: brightness(0.5);
+    cursor:default;
 }

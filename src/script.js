@@ -1,5 +1,6 @@
 const $pantalla = document.querySelector(".container");
 const $tarjetas = $pantalla.querySelectorAll(".col");
+let $tarjetaAnterior = null;
 
 inicializarjuego();
 

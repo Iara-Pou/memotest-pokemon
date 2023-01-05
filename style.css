@@ -1,0 +1,9 @@
+.row div {
+    height: 30vh;
+}
+
+.tarjeta{
+    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50% ;
+    border-radius: 10px;
+}
+

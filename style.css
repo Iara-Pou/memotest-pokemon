@@ -35,6 +35,23 @@
     filter: brightness(0.5);
     cursor:default;
 }
+
+#mensaje-ganar{
+    position:absolute;
+    top:45vh;
+    width: 100%;
+    animation: fade-in 0.8s;
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+  }
+
 .oculto{
     display: none;
 }

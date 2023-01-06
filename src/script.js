@@ -95,9 +95,8 @@ function reproducirSonido(){
     audio.play();
 }
 
-function ganar() {
+function ganar(contadorIntentos) {
     reproducirSonidoGanar();
-    mostrarMensajeGanar();
     mostrarMensajeGanar(contadorIntentos);
 }
 

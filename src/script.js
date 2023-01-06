@@ -19,6 +19,7 @@ $pantalla.onclick = function (e) {
     const tarjetahabilitada = !$tarjeta.classList.contains("deshabilitada");
 
     if (tarjetahabilitada && clickEnTarjeta) {
+        mostrarPokemon($tarjeta);
         }
     }
 

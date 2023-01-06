@@ -32,6 +32,10 @@ $pantalla.onclick = function (e) {
                 $tarjetaAnterior = null;
 
                 contadorParesHallados++;
+                if (contadorParesHallados === 6) {
+                    ganar();
+                }
+
             }, 500)
 
         } else if ($tarjeta.className !== $tarjetaAnterior.className) {

@@ -1,5 +1,5 @@
-const $pantalla = document.querySelector(".container");
-const $tarjetas = $pantalla.querySelectorAll(".col");
+const $tablero = document.querySelector("#tablero");
+const $tarjetas = $tablero.querySelectorAll(".col");
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 
@@ -13,7 +13,7 @@ function inicializarjuego() {
     asignarEstilos(pokemonesMezclados);
 }
 
-$pantalla.onclick = function (e) {
+$tablero.onclick = function (e) {
     const $tarjeta = e.target;
 
     const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");

@@ -20,6 +20,12 @@ $pantalla.onclick = function (e) {
 
     if (tarjetahabilitada && clickEnTarjeta) {
         mostrarPokemon($tarjeta);
+
+        if ($tarjetaAnterior === null) {
+            $tarjetaAnterior = $tarjeta;
+            //condicionales en los que hay tarjeta anterior y actual, se puede comparar
+        } else if ($tarjeta.className === $tarjetaAnterior.className) {
+        } else if ($tarjeta.className !== $tarjetaAnterior.className) {
         }
     }
 

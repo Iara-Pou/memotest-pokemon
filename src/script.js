@@ -33,6 +33,13 @@ $pantalla.onclick = function (e) {
             }, 500)
 
         } else if ($tarjeta.className !== $tarjetaAnterior.className) {
+            setTimeout(() => {
+                esconderPokemon($tarjetaAnterior);
+                esconderPokemon($tarjeta);
+                $tarjetaAnterior = null;
+
+            }, 500)
+
         }
     }
 

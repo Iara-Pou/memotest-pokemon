@@ -25,6 +25,13 @@ $pantalla.onclick = function (e) {
             $tarjetaAnterior = $tarjeta;
             //condicionales en los que hay tarjeta anterior y actual, se puede comparar
         } else if ($tarjeta.className === $tarjetaAnterior.className) {
+            setTimeout(() => {
+                deshabilitar($tarjetaAnterior);
+                deshabilitar($tarjeta);
+                $tarjetaAnterior = null;
+
+            }, 500)
+
         } else if ($tarjeta.className !== $tarjetaAnterior.className) {
         }
     }

@@ -14,6 +14,14 @@ function inicializarjuego() {
 
 $pantalla.onclick = function (e) {
     const $tarjeta = e.target;
+
+    const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
+    const tarjetahabilitada = !$tarjeta.classList.contains("deshabilitada");
+
+    if (tarjetahabilitada && clickEnTarjeta) {
+        }
+    }
+
 }
 
 function mezclarArray(array) {

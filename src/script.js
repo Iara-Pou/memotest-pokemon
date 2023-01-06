@@ -1,22 +1,5 @@
-const $tablero = document.querySelector("#tablero");
-const $tarjetas = $tablero.querySelectorAll(".col");
-let $tarjetaAnterior = null;
-let contadorParesHallados = 0;
-let contadorIntentos = 0;
-
-inicializarjuego();
-
-function inicializarjuego() {
-    const pokemones = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
-    const pokemonesDuplicados = pokemones.concat(pokemones);
-    let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
-
-    asignarEstilos(pokemonesMezclados);
-}
-
-$tablero.onclick = function (e) {
+function manejarClick(e) {
     const $tarjeta = e.target;
-
     const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
     const tarjetahabilitada = !$tarjeta.classList.contains("deshabilitada");
 
@@ -54,10 +37,17 @@ $tablero.onclick = function (e) {
             }, 500)
 
         }
-
-        contadorIntentos ++;
+        contadorIntentos++;
     }
 
+}
+
+function inicializarJuego() {
+    const pokemones = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
+    const pokemonesDuplicados = pokemones.concat(pokemones);
+    let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
+
+    asignarEstilos(pokemonesMezclados);
 }
 
 function mezclarArray(array) {
@@ -70,13 +60,6 @@ function asignarEstilos(pokemonesMezclados) {
     })
 }
 
-$pantalla.onclick = function (e) {
-    const $tarjeta = e.target;
-
-    const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
-    const tarjetahabilitada = !$tarjeta.classList.contains("deshabilitada");
-}
-
 function deshabilitar($tarjeta) {
     $tarjeta.classList.add("tarjeta-deshabilitada")
 }
@@ -86,11 +69,11 @@ function mostrarPokemon($tarjeta) {
     $tarjeta.classList.remove("tarjeta");
 }
 
-function esconderPokemon($tarjeta){
+function esconderPokemon($tarjeta) {
     $tarjeta.classList.add("tarjeta");
 }
 
-function reproducirSonido(){
+function reproducirSonido() {
     const audio = new Audio("../audio/click.mp3");
     audio.play();
 }
@@ -100,14 +83,23 @@ function ganar(contadorIntentos) {
     mostrarMensajeGanar(contadorIntentos);
 }
 
-function mostrarMensajeGanar(contadorIntentos){
+function mostrarMensajeGanar(contadorIntentos) {
     const $mensajeGanar = document.querySelector("#mensaje-ganar");
     const cantidadIntentos = document.querySelector("#mensaje-ganar strong");
     $mensajeGanar.classList.remove("oculto");
     cantidadIntentos.textContent = contadorIntentos;
 }
 
-function reproducirSonidoGanar(){
+function reproducirSonidoGanar() {
     const audio = new Audio("../audio/ganar.mp3");
     audio.play();
 }
+
+const $tablero = document.querySelector("#tablero");
+const $tarjetas = $tablero.querySelectorAll(".col");
+let $tarjetaAnterior = null;
+let contadorParesHallados = 0;
+let contadorIntentos = 0;
+
+inicializarJuego();
+$tablero.onclick = manejarClick;

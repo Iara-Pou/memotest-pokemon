@@ -1,6 +1,7 @@
 const $pantalla = document.querySelector(".container");
 const $tarjetas = $pantalla.querySelectorAll(".col");
 let $tarjetaAnterior = null;
+let contadorParesHallados = 0;
 
 inicializarjuego();
 
@@ -30,6 +31,7 @@ $pantalla.onclick = function (e) {
                 deshabilitar($tarjeta);
                 $tarjetaAnterior = null;
 
+                contadorParesHallados++;
             }, 500)
 
         } else if ($tarjeta.className !== $tarjetaAnterior.className) {

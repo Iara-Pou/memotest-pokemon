@@ -27,8 +27,12 @@
 }
 
 .tarjeta{
-    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50%;
     cursor:pointer;
+    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50%;
+    transition: background-color 400ms ease-in;
+}
+.tarjeta:active{
+    transform: scale(1.03);
 }
 
 .tarjeta-deshabilitada{

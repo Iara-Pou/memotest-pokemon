@@ -80,10 +80,16 @@ function reproducirSonido() {
 }
 
 function ganar(contadorIntentos) {
+    reproducirSonidoGanar();
     const $mensajeGanar = document.querySelector("#mensaje-ganar");
     const cantidadIntentos = document.querySelector("#mensaje-ganar strong");
     $mensajeGanar.classList.remove("oculto");
     cantidadIntentos.textContent = contadorIntentos;
+}
+
+function reproducirSonidoGanar(){
+    const audioGanar = new Audio("../audio/ganar.mp3");
+    audioGanar.play();
 }
 
 function deshabilitarTurnoUsuario(){

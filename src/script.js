@@ -35,14 +35,15 @@ function manejarClick(e) {
                 $tarjetaAnterior = null;
 
             }, 500)
-
         }
+
+        deshabilitarTurnoUsuario();
         contadorIntentos++;
     }
 
 }
 
-function inicializarJuego() {
+function iniciarJuego() {
     const pokemones = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
     const pokemonesDuplicados = pokemones.concat(pokemones);
     let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
@@ -95,11 +96,17 @@ function reproducirSonidoGanar() {
     audio.play();
 }
 
+function deshabilitarTurnoUsuario(){
+    $tablero.onclick = function(){};
+    setTimeout(()=> {$tablero.onclick = manejarClick;
+    } , 500)
+}
+
 const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 let contadorIntentos = 0;
 
-inicializarJuego();
+iniciarJuego();
 $tablero.onclick = manejarClick;

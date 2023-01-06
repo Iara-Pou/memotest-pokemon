@@ -85,3 +85,18 @@ function reproducirSonido(){
     const audio = new Audio("../audio/click.mp3");
     audio.play();
 }
+
+function ganar() {
+    reproducirSonidoGanar();
+    mostrarMensajeGanar();
+}
+
+function mostrarMensajeGanar(){
+    const $mensajeGanar = document.querySelector("#mensaje-ganar");
+    $mensajeGanar.classList.remove("oculto");
+}
+
+function reproducirSonidoGanar(){
+    const audio = new Audio("../audio/ganar.mp3");
+    audio.play();
+}

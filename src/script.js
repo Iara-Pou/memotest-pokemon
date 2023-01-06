@@ -2,6 +2,7 @@ const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
+let contadorIntentos = 0;
 
 inicializarjuego();
 
@@ -29,7 +30,8 @@ $tablero.onclick = function (e) {
 
         if ($tarjetaAnterior === null) {
             $tarjetaAnterior = $tarjeta;
-            //condicionales en los que hay tarjeta anterior y actual, se puede comparar
+            return;
+
         } else if ($tarjeta.className === $tarjetaAnterior.className) {
             setTimeout(() => {
                 deshabilitar($tarjetaAnterior);
@@ -38,7 +40,7 @@ $tablero.onclick = function (e) {
 
                 contadorParesHallados++;
                 if (contadorParesHallados === 6) {
-                    ganar();
+                    ganar(contadorIntentos);
                 }
 
             }, 500)
@@ -52,6 +54,8 @@ $tablero.onclick = function (e) {
             }, 500)
 
         }
+
+        contadorIntentos ++;
     }
 
 }
@@ -94,6 +98,7 @@ function reproducirSonido(){
 function ganar() {
     reproducirSonidoGanar();
     mostrarMensajeGanar();
+    mostrarMensajeGanar(contadorIntentos);
 }
 
 function mostrarMensajeGanar(contadorIntentos){

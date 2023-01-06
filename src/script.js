@@ -22,7 +22,7 @@ function manejarClick(e) {
                 $tarjetaAnterior = null;
 
                 contadorParesHallados++;
-                if (contadorParesHallados === 6) {
+                if (contadorParesHallados === TOTAL_PARES) {
                     ganar(contadorIntentos);
                 }
 
@@ -48,14 +48,14 @@ function iniciarJuego() {
     const pokemonesDuplicados = pokemones.concat(pokemones);
     let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
 
-    asignarEstilos(pokemonesMezclados);
+    asignarPokemones(pokemonesMezclados);
 }
 
 function mezclarArray(array) {
     return array.sort(() => .5 - Math.random());
 }
 
-function asignarEstilos(pokemonesMezclados) {
+function asignarPokemones(pokemonesMezclados) {
     $tarjetas.forEach(function (tarjeta, indice) {
         tarjeta.classList.add(`${pokemonesMezclados[indice]}`);
     })
@@ -100,6 +100,7 @@ function deshabilitarTurnoUsuario(){
 
 const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
+const TOTAL_PARES = 6;
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 let contadorIntentos = 0;

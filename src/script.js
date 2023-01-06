@@ -12,6 +12,10 @@ function inicializarjuego() {
     asignarEstilos(pokemonesMezclados);
 }
 
+$pantalla.onclick = function (e) {
+    const $tarjeta = e.target;
+}
+
 function mezclarArray(array) {
     return array.sort(() => .5 - Math.random());
 }

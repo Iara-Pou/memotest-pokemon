@@ -96,9 +96,11 @@ function ganar() {
     mostrarMensajeGanar();
 }
 
-function mostrarMensajeGanar(){
+function mostrarMensajeGanar(contadorIntentos){
     const $mensajeGanar = document.querySelector("#mensaje-ganar");
+    const cantidadIntentos = document.querySelector("#mensaje-ganar strong");
     $mensajeGanar.classList.remove("oculto");
+    cantidadIntentos.textContent = contadorIntentos;
 }
 
 function reproducirSonidoGanar(){

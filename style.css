@@ -3,32 +3,32 @@
 }
 
 .pickachu{
-    background:  whitesmoke url(/img/pickachu.png) no-repeat center/70% ;
+    background:  whitesmoke url(./img/pickachu.png) no-repeat center/70% ;
 }
 
 .bulbasaur{
-    background:  whitesmoke url(/img/bulbasaur.png) no-repeat center/60% ;
+    background:  whitesmoke url(./img/bulbasaur.png) no-repeat center/60% ;
 }
 
 .charmander{
-    background:  whitesmoke url(/img/charmander.png) no-repeat center/70% ;
+    background:  whitesmoke url(./img/charmander.png) no-repeat center/70% ;
 }
 
 .caterpie{
-    background:  whitesmoke url(/img/caterpie.png) no-repeat center/60% ;
+    background:  whitesmoke url(./img/caterpie.png) no-repeat center/60% ;
 }
 
 .pidgey{
-    background:  whitesmoke url(/img/pidgey.png) no-repeat center/60% ;
+    background:  whitesmoke url(./img/pidgey.png) no-repeat center/60% ;
 }
 
 .squirtle{
-    background:  whitesmoke url(/img/squirtle.png) no-repeat center/60% ;
+    background:  whitesmoke url(./img/squirtle.png) no-repeat center/60% ;
 }
 
 .tarjeta{
     cursor:pointer;
-    background:  rgb(228, 2, 2) url(/img/pokeball.png) no-repeat center/50%;
+    background:  rgb(228, 2, 2) url(./img/pokeball.png) no-repeat center/50%;
     transition: background-color 400ms ease-in;
 }
 .tarjeta:active{

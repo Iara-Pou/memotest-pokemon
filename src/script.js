@@ -75,7 +75,7 @@ function esconderPokemon($tarjeta) {
 }
 
 function reproducirSonido() {
-    const audio = new Audio("../audio/click.mp3");
+    const audio = new Audio("./audio/click.mp3");
     audio.play();
 }
 
@@ -88,7 +88,7 @@ function ganar(contadorIntentos) {
 }
 
 function reproducirSonidoGanar(){
-    const audioGanar = new Audio("../audio/ganar.mp3");
+    const audioGanar = new Audio("./audio/ganar.mp3");
     audioGanar.play();
 }
 

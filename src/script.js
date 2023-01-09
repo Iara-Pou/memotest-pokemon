@@ -108,6 +108,19 @@ let contadorIntentos = 0;
 
 iniciarJuego();
 $tablero.onclick = manejarClick;
+$botonReinicio.onclick = reiniciarPartida;
+
+function reiniciarValoresIniciales(){
+    $tarjetaAnterior = null;
+    contadorParesHallados = 0;
+    contadorIntentos = 0;
+    habilitarTarjetas();
+}
+
+function habilitarTarjetas(){
+    $tarjetas.forEach(tarjeta => tarjeta.classList.remove("tarjeta-deshabilitada"))
+}
+
 function reiniciarPartida(){
     reiniciarValoresIniciales();
     iniciarJuego();

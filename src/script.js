@@ -122,6 +122,11 @@ function habilitarTarjetas(){
 }
 
 function reiniciarPartida(){
+    esconderCartelFinal();
     reiniciarValoresIniciales();
     iniciarJuego();
+}
+
+function esconderCartelFinal(){
+    document.querySelector("#mensaje-ganar").classList.add("oculto");
 }

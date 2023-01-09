@@ -57,7 +57,7 @@ function mezclarArray(array) {
 
 function asignarPokemones(pokemonesMezclados) {
     $tarjetas.forEach(function (tarjeta, indice) {
-        tarjeta.classList.add(`${pokemonesMezclados[indice]}`);
+        tarjeta.classList.add(`${pokemonesMezclados[indice]}`, "tarjeta");
     })
 }
 

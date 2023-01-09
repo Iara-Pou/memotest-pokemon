@@ -127,11 +127,11 @@ function reiniciarValoresIniciales() {
     $tarjetaAnterior = null;
     contadorParesHallados = 0;
     contadorIntentos = 0;
-    habilitarTarjetas();
+    reiniciarTarjetas();
 }
 
-function habilitarTarjetas() {
-    $tarjetas.forEach(tarjeta => tarjeta.classList.remove("tarjeta-deshabilitada"))
+function reiniciarTarjetas() {
+    $tarjetas.forEach(tarjeta => tarjeta.className = "col rounded")
 }
 
 function esconderCartelFinal() {

@@ -109,4 +109,6 @@ let contadorIntentos = 0;
 iniciarJuego();
 $tablero.onclick = manejarClick;
 function reiniciarPartida(){
+    reiniciarValoresIniciales();
+    iniciarJuego();
 }

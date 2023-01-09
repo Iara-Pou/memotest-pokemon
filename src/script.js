@@ -43,24 +43,6 @@ function manejarClick(e) {
 
 }
 
-function iniciarJuego() {
-    const pokemones = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
-    const pokemonesDuplicados = pokemones.concat(pokemones);
-    let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
-
-    asignarPokemones(pokemonesMezclados);
-}
-
-function mezclarArray(array) {
-    return array.sort(() => .5 - Math.random());
-}
-
-function asignarPokemones(pokemonesMezclados) {
-    $tarjetas.forEach(function (tarjeta, indice) {
-        tarjeta.classList.add(`${pokemonesMezclados[indice]}`);
-    })
-}
-
 function deshabilitar($tarjeta) {
     $tarjeta.classList.add("tarjeta-deshabilitada")
 }
@@ -79,6 +61,13 @@ function reproducirSonido() {
     audio.play();
 }
 
+function deshabilitarTurnoUsuario() {
+    $tablero.onclick = function () { };
+    setTimeout(() => {
+        $tablero.onclick = manejarClick;
+    }, 500)
+}
+
 function ganar(contadorIntentos) {
     reproducirSonidoGanar();
     const $mensajeGanar = document.querySelector("#mensaje-ganar");
@@ -87,19 +76,53 @@ function ganar(contadorIntentos) {
     cantidadIntentos.textContent = contadorIntentos;
 }
 
-function reproducirSonidoGanar(){
+function reproducirSonidoGanar() {
     const audioGanar = new Audio("./audio/ganar.mp3");
     audioGanar.play();
 }
 
-function deshabilitarTurnoUsuario(){
-    $tablero.onclick = function(){};
-    setTimeout(()=> {$tablero.onclick = manejarClick;
-    } , 500)
+function iniciarJuego() {
+    const pokemones = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
+    const pokemonesDuplicados = pokemones.concat(pokemones);
+    let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
+
+    asignarPokemones(pokemonesMezclados);
+}
+
+function mezclarArray(array) {
+    return array.sort(() => .5 - Math.random());
+}
+
+function asignarPokemones(pokemonesMezclados) {
+    $tarjetas.forEach(function (tarjeta, indice) {
+        tarjeta.classList.add(`${pokemonesMezclados[indice]}`, "tarjeta");
+    })
+}
+
+function reiniciarPartida() {
+    esconderCartelFinal();
+    reiniciarValoresIniciales();
+    iniciarJuego();
+}
+
+function reiniciarValoresIniciales() {
+    $tarjetaAnterior = null;
+    contadorParesHallados = 0;
+    contadorIntentos = 0;
+    habilitarTarjetas();
+}
+
+function habilitarTarjetas() {
+    $tarjetas.forEach(tarjeta => tarjeta.classList.remove("tarjeta-deshabilitada"))
+}
+
+function esconderCartelFinal() {
+    document.querySelector("#mensaje-ganar").classList.add("oculto");
 }
 
 const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
+const $botonReinicio = document.querySelector("#boton-reinicio-juego")
 const TOTAL_PARES = 6;
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
@@ -107,3 +130,4 @@ let contadorIntentos = 0;
 
 iniciarJuego();
 $tablero.onclick = manejarClick;
+$botonReinicio.onclick = reiniciarPartida;

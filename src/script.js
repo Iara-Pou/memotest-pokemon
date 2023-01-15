@@ -13,9 +13,9 @@ $botonReinicio.onclick = reiniciarPartida;
 function manejarClick(e) {
     const $tarjeta = e.target;
     const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
-    const tarjetahabilitada = !$tarjeta.classList.contains("deshabilitada");
+    const tarjetaHabilitada = !$tarjeta.classList.contains("deshabilitada");
 
-    if (tarjetahabilitada && clickEnTarjeta) {
+    if (tarjetaHabilitada && clickEnTarjeta) {
 
         if ($tarjeta === $tarjetaAnterior) {
             return;

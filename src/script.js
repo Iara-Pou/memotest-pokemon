@@ -1,3 +1,15 @@
+const $tablero = document.querySelector("#tablero");
+const $tarjetas = $tablero.querySelectorAll(".col");
+const $botonReinicio = document.querySelector("#boton-reinicio-juego")
+const TOTAL_PARES = 6;
+let $tarjetaAnterior = null;
+let contadorParesHallados = 0;
+let contadorIntentos = 0;
+
+iniciarJuego();
+$tablero.onclick = manejarClick;
+$botonReinicio.onclick = reiniciarPartida;
+
 function manejarClick(e) {
     const $tarjeta = e.target;
     const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
@@ -119,15 +131,3 @@ function reiniciarTarjetas() {
 function esconderCartelFinal() {
     document.querySelector("#mensaje-ganar").classList.add("oculto");
 }
-
-const $tablero = document.querySelector("#tablero");
-const $tarjetas = $tablero.querySelectorAll(".col");
-const $botonReinicio = document.querySelector("#boton-reinicio-juego")
-const TOTAL_PARES = 6;
-let $tarjetaAnterior = null;
-let contadorParesHallados = 0;
-let contadorIntentos = 0;
-
-iniciarJuego();
-$tablero.onclick = manejarClick;
-$botonReinicio.onclick = reiniciarPartida;

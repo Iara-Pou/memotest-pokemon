@@ -56,8 +56,8 @@ function manejarClick(e) {
 }
 
 function iniciarJuego() {
-    const pokemones = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
-    const pokemonesDuplicados = pokemones.concat(pokemones);
+    const POKEMONES = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
+    const pokemonesDuplicados = POKEMONES.concat(POKEMONES);
     let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
 
     asignarPokemones(pokemonesMezclados);

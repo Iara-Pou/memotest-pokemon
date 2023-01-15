@@ -99,24 +99,6 @@ function reproducirSonidoGanar() {
     audioGanar.play();
 }
 
-function iniciarJuego() {
-    const pokemones = ["pickachu", "bulbasaur", "charmander", "caterpie", "pidgey", "squirtle"];
-    const pokemonesDuplicados = pokemones.concat(pokemones);
-    let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
-
-    asignarPokemones(pokemonesMezclados);
-}
-
-function mezclarArray(array) {
-    return array.sort(() => .5 - Math.random());
-}
-
-function asignarPokemones(pokemonesMezclados) {
-    $tarjetas.forEach(function (tarjeta, indice) {
-        tarjeta.classList.add(`${pokemonesMezclados[indice]}`, "tarjeta");
-    })
-}
-
 function reiniciarPartida() {
     esconderCartelFinal();
     reiniciarValoresIniciales();

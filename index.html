@@ -12,32 +12,42 @@
 </head>
 
 <body class="bg-dark">
-    <main>
-        <div class="container py-3 mx-auto" id="tablero">
-            <div class="row gap-2 my-2">
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
+    <header>
+        <h1 class="text-light">Memotest</h1>
+    </header>
+    <main class="row">
+            <div class="container py-3 mx-auto" id="tablero">
+                <div class="row gap-2 my-2">
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                </div>
+                <div class="row gap-2 my-2">
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                </div>
+                <div class="row gap-2 my-2">
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                </div>
             </div>
-            <div class="row gap-2 my-2">
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
+            <div class="alert alert-light text-center oculto" id="mensaje-ganar" role="alert">
+                <h1>¡Ganaste!</h1>
+                <p>Lo hiciste en <strong></strong> intentos</p>
+                <button type="button" class="btn btn-success" id="boton-reinicio-juego">Jugar de nuevo</button>
             </div>
-            <div class="row gap-2 my-2">
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-            </div>
-        </div>
-        <div class="alert alert-light text-center oculto" id="mensaje-ganar" role="alert">
-            <h1>¡Ganaste!</h1>
-            <p>Lo hiciste en <strong></strong> intentos</p>
-            <button type="button" class="btn btn-success" id="boton-reinicio-juego">Jugar de nuevo</button>
-        </div>
+        </section>
+        <section class="col-12 col-md-3">
+                <h2 class="text-light">Seleccioná el nivel:</h2>
+                <button>Fácil</button>
+                <button>Medio</button>
+                <button>Difícil</button>
+        </section>
     </main>
     <script src="./src/script.js"></script>
 </body>

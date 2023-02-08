@@ -10,6 +10,7 @@ const TOTAL_PARES = 6;
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 let contadorIntentos = 0;
+let partidaIniciada;
 let limiteTurnos;
 
 $tablero.onclick = manejarClick;
@@ -31,6 +32,10 @@ const nivelNoSeleccionado = limiteTurnos === undefined;
 if(nivelNoSeleccionado){
   remarcarSeleccionarTurno();
   return;
+} else if (partidaIniciada){
+  return;
+}
+
 iniciarJuego();
 
 }

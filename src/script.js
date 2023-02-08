@@ -28,7 +28,7 @@ function asignarTotalTurnos (totalTurnos){
 }
 
 function manejarInicioPartida(){
-const nivelNoSeleccionado = limiteTurnos === undefined;
+const nivelNoSeleccionado = turnosRestantes === undefined;
 
 if(nivelNoSeleccionado){
   remarcarSeleccionarTurno();

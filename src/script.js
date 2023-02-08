@@ -4,8 +4,8 @@ const $botonReinicio = document.querySelector("#boton-reinicio-juego");
 const $botonJugar = document.querySelector("#boton-jugar");
 
 const $botonNivelFacil = document.querySelector("#boton-facil");
-const $botonNivelMedio = document.querySelector("#boton-facil");
-const $botonNivelDificil = document.querySelector("#boton-facil");
+const $botonNivelMedio = document.querySelector("#boton-medio");
+const $botonNivelDificil = document.querySelector("#boton-dificil");
 
 $botonNivelFacil.onclick = () => asignarLimiteTurnos(0);
 $botonNivelMedio.onclick = () => asignarLimiteTurnos(15);
@@ -78,6 +78,15 @@ function iniciarJuego() {
   let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
 
   asignarPokemones(pokemonesMezclados);
+  deshabilitarBotonesNiveles();
+}
+
+function deshabilitarNiveles(){
+  [$botonNivelFacil, $botonNivelMedio, $botonNivelDificil].forEach((boton)=>{
+    boton.onclick = () => {};
+    boton.className = "btn btn-outline-light disabled w-100 mt-1";
+  });
+
 }
 
 function mezclarArray(array) {

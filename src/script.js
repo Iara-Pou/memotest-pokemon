@@ -26,6 +26,11 @@ document.querySelector("#turnos-restantes").textContent = limite;
 }
 
 function manejarInicioPartida(){
+const nivelNoSeleccionado = limiteTurnos === undefined;
+
+if(nivelNoSeleccionado){
+  remarcarSeleccionarTurno();
+  return;
 iniciarJuego();
 
 }

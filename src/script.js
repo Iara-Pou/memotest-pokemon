@@ -86,6 +86,14 @@ function iniciarJuego() {
   deshabilitarBotonesNiveles();
 }
 
+function remarcarSeleccionarTurno(){
+  const $mensajeSeleccionarTurno = document.querySelector("#mensaje-seleccionar-nivel");
+  $mensajeSeleccionarTurno.classList.add("animate__animated", "animate__shakeX");
+  $mensajeSeleccionarTurno.addEventListener('animationend', () => {
+    $mensajeSeleccionarTurno.classList.remove("animate__animated", "animate__shakeX");
+  });
+}
+
 function deshabilitarBotonesNiveles(){
   [$botonNivelFacil, $botonNivelMedio, $botonNivelDificil].forEach((boton)=>{
     boton.onclick = () => {};

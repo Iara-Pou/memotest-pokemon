@@ -80,7 +80,7 @@ function iniciarJuego() {
   deshabilitarBotonesNiveles();
 }
 
-function deshabilitarNiveles(){
+function deshabilitarBotonesNiveles(){
   [$botonNivelFacil, $botonNivelMedio, $botonNivelDificil].forEach((boton)=>{
     boton.onclick = () => {};
     boton.className = "btn btn-outline-light disabled w-100 mt-1";

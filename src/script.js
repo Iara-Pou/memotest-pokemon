@@ -37,6 +37,7 @@ if(nivelNoSeleccionado){
 }
 
 iniciarJuego();
+partidaIniciada = true
 
 }
 

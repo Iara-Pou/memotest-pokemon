@@ -16,14 +16,15 @@ let turnosRestantes;
 $tablero.onclick = manejarClick;
 $botonJugar.onclick = manejarInicioPartida;
 $botonReinicio.onclick = reiniciarPartida;
+$botonNivelFacil.onclick = () => asignarTotalTurnos(30);
+$botonNivelMedio.onclick = () => asignarTotalTurnos(15);
+$botonNivelDificil.onclick = () => asignarTotalTurnos(10);
 
-$botonNivelFacil.onclick = () => asignarLimiteTurnos(0);
-$botonNivelMedio.onclick = () => asignarLimiteTurnos(15);
-$botonNivelDificil.onclick = () => asignarLimiteTurnos(10);
+function asignarTotalTurnos (totalTurnos){
+  turnosRestantes = totalTurnos;
+  actualizarTurnosRestantes(turnosRestantes);
+}
 
-function asignarLimiteTurnos(limite){
-limiteTurnos = limite;
-document.querySelector("#turnos-restantes").textContent = limite;
 }
 
 function manejarInicioPartida(){

@@ -25,6 +25,11 @@ function asignarTotalTurnos (totalTurnos){
   actualizarTurnosRestantes(turnosRestantes);
 }
 
+function actualizarTurnosRestantes(){
+  document.querySelector("#turnos-restantes").textContent = turnosRestantes;
+  if(turnosRestantes <= 0){
+  alert("perdiste");
+  }
 }
 
 function manejarInicioPartida(){

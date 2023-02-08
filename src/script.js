@@ -9,7 +9,6 @@ const $botonNivelDificil = document.querySelector("#boton-dificil");
 const TOTAL_PARES = 6;
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
-let contadorIntentos = 0;
 let partidaIniciada;
 let turnosRestantes;
 
@@ -44,7 +43,6 @@ if(nivelNoSeleccionado){
 
 iniciarJuego();
 partidaIniciada = true
-
 }
 
 function manejarClick(e) {
@@ -70,7 +68,7 @@ function manejarClick(e) {
 
         contadorParesHallados++;
         if (contadorParesHallados === TOTAL_PARES) {
-          ganar(contadorIntentos);
+          ganar(turnosRestantes);
         }
       }, 500);
     } else if ($tarjeta.className !== $tarjetaAnterior.className) {
@@ -81,8 +79,10 @@ function manejarClick(e) {
       }, 500);
     }
 
+    turnosRestantes--;
+    actualizarTurnosRestantes();
     deshabilitarTurnoUsuario();
-    contadorIntentos++;
+
   }
 }
 
@@ -153,12 +153,12 @@ function deshabilitarTurnoUsuario() {
   }, 500);
 }
 
-function ganar(contadorIntentos) {
+function ganar(turnosRestantes) {
   reproducirSonidoGanar();
   const $mensajeGanar = document.querySelector("#mensaje-ganar");
-  const cantidadIntentos = document.querySelector("#mensaje-ganar strong");
+  const cantidadIntentosRestantes = document.querySelector("#mensaje-ganar strong");
   $mensajeGanar.classList.remove("oculto");
-  cantidadIntentos.textContent = contadorIntentos;
+  cantidadIntentosRestantes.textContent = turnosRestantes;
 }
 
 function reproducirSonidoGanar() {
@@ -175,7 +175,7 @@ function reiniciarPartida() {
 function reiniciarValoresIniciales() {
   $tarjetaAnterior = null;
   contadorParesHallados = 0;
-  contadorIntentos = 0;
+  turnosRestantes = undefined;
   reiniciarTarjetas();
 }
 

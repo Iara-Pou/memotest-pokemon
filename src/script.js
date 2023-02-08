@@ -11,7 +11,7 @@ let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 let contadorIntentos = 0;
 let partidaIniciada;
-let limiteTurnos;
+let turnosRestantes;
 
 $tablero.onclick = manejarClick;
 $botonJugar.onclick = manejarInicioPartida;

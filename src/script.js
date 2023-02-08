@@ -65,7 +65,7 @@ function manejarClick(e) {
 }
 
 function iniciarJuego() {
-  const nivelNoSeleccionado = limiteTurnos !== undefined;
+  const nivelNoSeleccionado = limiteTurnos === undefined;
   const POKEMONES = [
     "pickachu",
     "bulbasaur",

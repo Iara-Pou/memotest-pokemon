@@ -13,7 +13,7 @@ let contadorIntentos = 0;
 let limiteTurnos;
 
 $tablero.onclick = manejarClick;
-$botonJugar.onclick = iniciarJuego;
+$botonJugar.onclick = manejarInicioPartida;
 $botonReinicio.onclick = reiniciarPartida;
 
 $botonNivelFacil.onclick = () => asignarLimiteTurnos(0);
@@ -23,6 +23,11 @@ $botonNivelDificil.onclick = () => asignarLimiteTurnos(10);
 function asignarLimiteTurnos(limite){
 limiteTurnos = limite;
 document.querySelector("#turnos-restantes").textContent = limite;
+}
+
+function manejarInicioPartida(){
+iniciarJuego();
+
 }
 
 function manejarClick(e) {
@@ -65,7 +70,6 @@ function manejarClick(e) {
 }
 
 function iniciarJuego() {
-  const nivelNoSeleccionado = limiteTurnos === undefined;
   const POKEMONES = [
     "pickachu",
     "bulbasaur",
@@ -76,11 +80,6 @@ function iniciarJuego() {
   ];
   const pokemonesDuplicados = POKEMONES.concat(POKEMONES);
   let pokemonesMezclados = mezclarArray(pokemonesDuplicados);
-
-  if(nivelNoSeleccionado){
-    remarcarSeleccionarTurno();
-    return;
-  } 
 
   asignarPokemones(pokemonesMezclados);
   deshabilitarBotonesNiveles();

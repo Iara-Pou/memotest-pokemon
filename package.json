@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Iara-Pou/memotest-pokemon#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.2.3"
   }
 }

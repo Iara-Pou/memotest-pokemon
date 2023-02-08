@@ -3,14 +3,28 @@ const $tarjetas = $tablero.querySelectorAll(".col");
 const $botonReinicio = document.querySelector("#boton-reinicio-juego");
 const $botonJugar = document.querySelector("#boton-jugar");
 
+const $botonNivelFacil = document.querySelector("#boton-facil");
+const $botonNivelMedio = document.querySelector("#boton-facil");
+const $botonNivelDificil = document.querySelector("#boton-facil");
+
+$botonNivelFacil.onclick = () => asignarLimiteTurnos(0);
+$botonNivelMedio.onclick = () => asignarLimiteTurnos(15);
+$botonNivelDificil.onclick = () => asignarLimiteTurnos(10);
+
 const TOTAL_PARES = 6;
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 let contadorIntentos = 0;
+let limiteTurnos;
 
 $tablero.onclick = manejarClick;
 $botonJugar.onclick = iniciarJuego;
 $botonReinicio.onclick = reiniciarPartida;
+
+function asignarLimiteTurnos(limite){
+limiteTurnos = limite;
+document.querySelector("#turnos-restantes").textContent = limite;
+}
 
 function manejarClick(e) {
   const $tarjeta = e.target;

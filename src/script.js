@@ -48,9 +48,8 @@ partidaIniciada = true
 function manejarClick(e) {
   const $tarjeta = e.target;
   const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
-  const tarjetaHabilitada = ! $tarjeta.classList.contains("deshabilitada");
 
-  if (tarjetaHabilitada && clickEnTarjeta) {
+  if (clickEnTarjeta) {
     if ($tarjeta === $tarjetaAnterior) {
       return;
     }

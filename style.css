@@ -39,9 +39,9 @@ h1{
     transform: scale(1.03);
 }
 
-.tarjeta-deshabilitada{
+.deshabilitado{
     filter: brightness(0.5);
-    cursor:default;
+    cursor:default !important;
 }
 
 #mensaje-ganar{

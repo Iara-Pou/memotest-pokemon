@@ -27,7 +27,7 @@ function asignarTotalTurnos (totalTurnos){
 function actualizarTurnosRestantes(){
   document.querySelector("#turnos-restantes").textContent = turnosRestantes;
   if(turnosRestantes <= 0){
-  alert("perdiste");
+    setTimeout(()=>{alert("perdiste");}, 500)
   }
 }
 
@@ -48,7 +48,7 @@ partidaIniciada = true
 function manejarClick(e) {
   const $tarjeta = e.target;
   const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
-  const tarjetaHabilitada = !$tarjeta.classList.contains("deshabilitada");
+  const tarjetaHabilitada = ! $tarjeta.classList.contains("deshabilitada");
 
   if (tarjetaHabilitada && clickEnTarjeta) {
     if ($tarjeta === $tarjetaAnterior) {
@@ -60,7 +60,9 @@ function manejarClick(e) {
     if ($tarjetaAnterior === null) {
       $tarjetaAnterior = $tarjeta;
       return;
+
     } else if ($tarjeta.className === $tarjetaAnterior.className) {
+
       setTimeout(() => {
         deshabilitar($tarjetaAnterior);
         deshabilitar($tarjeta);
@@ -70,19 +72,23 @@ function manejarClick(e) {
         if (contadorParesHallados === TOTAL_PARES) {
           ganar(turnosRestantes);
         }
+
       }, 500);
+
     } else if ($tarjeta.className !== $tarjetaAnterior.className) {
+
       setTimeout(() => {
         esconderPokemon($tarjetaAnterior);
         esconderPokemon($tarjeta);
         $tarjetaAnterior = null;
+
       }, 500);
+
     }
 
     turnosRestantes--;
     actualizarTurnosRestantes();
     deshabilitarTurnoUsuario();
-
   }
 }
 
@@ -112,8 +118,7 @@ function remarcarSeleccionarTurno(){
 
 function deshabilitarBotonesNiveles(){
   [$botonNivelFacil, $botonNivelMedio, $botonNivelDificil].forEach((boton)=>{
-    boton.onclick = () => {};
-    boton.className = "btn btn-outline-light disabled w-100 mt-1";
+    deshabilitar(boton);
   });
 
 }
@@ -128,8 +133,9 @@ function asignarPokemones(pokemonesMezclados) {
   });
 }
 
-function deshabilitar($tarjeta) {
-  $tarjeta.classList.add("tarjeta-deshabilitada");
+function deshabilitar($elemento) {
+  $elemento.classList.add("deshabilitado");
+  $elemento.onclick = () => {};
 }
 
 function mostrarPokemon($tarjeta) {

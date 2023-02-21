@@ -141,8 +141,12 @@ function asignarPokemones(pokemonesMezclados) {
 }
 
 function deshabilitar($elemento) {
-  $elemento.classList.add("deshabilitado");
   $elemento.onclick = () => {};
+  $elemento.classList.add("deshabilitado");
+  if($elemento.tagName === "BUTTON"){
+    //cancela :hover y :active default en botones bootstrap
+    $elemento.classList.add("disabled");
+  }
 }
 
 function mostrarPokemon($tarjeta) {

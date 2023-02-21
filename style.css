@@ -44,9 +44,9 @@ h1{
     cursor:default !important;
 }
 
-#mensaje-ganar{
+#mensaje-final{
     position:absolute;
-    top:45vh;
+    top:40vh;
     width: 100%;
     animation: fade-in 0.8s;
 }

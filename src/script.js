@@ -19,33 +19,33 @@ $botonNivelFacil.onclick = () => asignarTotalTurnos(30);
 $botonNivelMedio.onclick = () => asignarTotalTurnos(15);
 $botonNivelDificil.onclick = () => asignarTotalTurnos(10);
 
-function asignarTotalTurnos (totalTurnos){
+function asignarTotalTurnos(totalTurnos) {
   turnosRestantes = totalTurnos;
   actualizarTurnosRestantes(turnosRestantes);
 }
 
-function actualizarTurnosRestantes(){
+function actualizarTurnosRestantes() {
   document.querySelector("#turnos-restantes").textContent = turnosRestantes;
 
-  if(turnosRestantes <= 0){
-    setTimeout(()=>{perder()}
-    , 500);
+  if (turnosRestantes <= 0) {
+    setTimeout(() => {
+      perder();
+    }, 500);
+  }
+}
+
+function manejarInicioPartida() {
+  const nivelNoSeleccionado = turnosRestantes === undefined;
+
+  if (nivelNoSeleccionado) {
+    remarcarSeleccionarTurno();
+    return;
+  } else if (partidaIniciada) {
+    return;
   }
 
-}
-
-function manejarInicioPartida(){
-const nivelNoSeleccionado = turnosRestantes === undefined;
-
-if(nivelNoSeleccionado){
-  remarcarSeleccionarTurno();
-  return;
-} else if (partidaIniciada){
-  return;
-}
-
-iniciarJuego();
-partidaIniciada = true
+  iniciarJuego();
+  partidaIniciada = true;
 }
 
 function manejarClick(e) {
@@ -62,9 +62,7 @@ function manejarClick(e) {
     if ($tarjetaAnterior === null) {
       $tarjetaAnterior = $tarjeta;
       return;
-
     } else if ($tarjeta.className === $tarjetaAnterior.className) {
-
       setTimeout(() => {
         deshabilitar($tarjetaAnterior);
         deshabilitar($tarjeta);
@@ -74,18 +72,13 @@ function manejarClick(e) {
         if (contadorParesHallados === TOTAL_PARES) {
           ganar(turnosRestantes);
         }
-
       }, 500);
-
     } else if ($tarjeta.className !== $tarjetaAnterior.className) {
-
       setTimeout(() => {
         esconderPokemon($tarjetaAnterior);
         esconderPokemon($tarjeta);
         $tarjetaAnterior = null;
-
       }, 500);
-
     }
 
     turnosRestantes--;
@@ -110,19 +103,31 @@ function iniciarJuego() {
   deshabilitarBotonesNiveles();
 }
 
-function remarcarSeleccionarTurno(){
-  const $mensajeSeleccionarTurno = document.querySelector("#mensaje-seleccionar-nivel");
-  $mensajeSeleccionarTurno.classList.add("animate__animated", "animate__shakeX");
-  $mensajeSeleccionarTurno.addEventListener('animationend', () => {
-    $mensajeSeleccionarTurno.classList.remove("animate__animated", "animate__shakeX");
+function remarcarSeleccionarTurno() {
+  const $mensajeSeleccionarTurno = document.querySelector(
+    "#mensaje-seleccionar-nivel"
+  );
+  $mensajeSeleccionarTurno.classList.add(
+    "animate__animated",
+    "animate__shakeX"
+  );
+  $mensajeSeleccionarTurno.addEventListener("animationend", () => {
+    $mensajeSeleccionarTurno.classList.remove(
+      "animate__animated",
+      "animate__shakeX"
+    );
   });
 }
 
-function deshabilitarBotonesNiveles(){
-  [$botonNivelFacil, $botonNivelMedio, $botonNivelDificil].forEach((boton)=>{
+function deshabilitarBotonesNiveles() {
+  const botonesNiveles = [
+    $botonNivelFacil,
+    $botonNivelMedio,
+    $botonNivelDificil,
+  ];
+  botonesNiveles.forEach((boton) => {
     deshabilitar(boton);
   });
-
 }
 
 function mezclarArray(array) {
@@ -165,17 +170,19 @@ function ganar(turnosRestantes) {
   reproducirSonidoGanar();
   document.querySelector("#mensaje-final").classList.remove("oculto");
   document.querySelector("#ganador").classList.remove("oculto");
-  const cantidadIntentosRestantes = document.querySelector("#mensaje-final strong");
+  const cantidadIntentosRestantes = document.querySelector(
+    "#mensaje-final strong"
+  );
   cantidadIntentosRestantes.textContent = turnosRestantes;
 }
 
-function perder(){
+function perder() {
   reproducirSonidoPerder();
   document.querySelector("#mensaje-final").classList.remove("oculto");
   document.querySelector("#perdedor").classList.remove("oculto");
 }
 
-function reproducirSonidoPerder(){
+function reproducirSonidoPerder() {
   const audioPerder = new Audio("./audio/perder.mp3");
   audioPerder.play();
 }

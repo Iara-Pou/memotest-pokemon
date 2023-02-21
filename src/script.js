@@ -167,9 +167,16 @@ function ganar(turnosRestantes) {
 }
 
 function perder(){
+  reproducirSonidoPerder();
   document.querySelector("#mensaje-final").classList.remove("oculto");
   document.querySelector("#perdedor").classList.remove("oculto");
 }
+
+function reproducirSonidoPerder(){
+  const audioPerder = new Audio("./audio/perder.mp3");
+  audioPerder.play();
+}
+
 function reproducirSonidoGanar() {
   const audioGanar = new Audio("./audio/ganar.mp3");
   audioGanar.play();

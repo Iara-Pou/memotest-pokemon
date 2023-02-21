@@ -2,9 +2,6 @@ const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
 const $botonReinicio = document.querySelector("#boton-reinicio-juego");
 const $botonJugar = document.querySelector("#boton-jugar");
-const $botonNivelFacil = document.querySelector("#boton-facil");
-const $botonNivelMedio = document.querySelector("#boton-medio");
-const $botonNivelDificil = document.querySelector("#boton-dificil");
 
 const TOTAL_PARES = 6;
 let $tarjetaAnterior = null;
@@ -15,9 +12,9 @@ let turnosRestantes;
 $tablero.onclick = manejarClick;
 $botonJugar.onclick = manejarInicioPartida;
 $botonReinicio.onclick = reiniciarPartida;
-$botonNivelFacil.onclick = () => asignarTotalTurnos(30);
-$botonNivelMedio.onclick = () => asignarTotalTurnos(15);
-$botonNivelDificil.onclick = () => asignarTotalTurnos(10);
+document.querySelector("#boton-facil").onclick = () => asignarTotalTurnos(30);
+document.querySelector("#boton-medio").onclick = () => asignarTotalTurnos(15);
+document.querySelector("#boton-dificil").onclick = () => asignarTotalTurnos(10);
 
 function asignarTotalTurnos(totalTurnos) {
   turnosRestantes = totalTurnos;
@@ -51,8 +48,9 @@ function manejarInicioPartida() {
 function manejarClick(e) {
   const $tarjeta = e.target;
   const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
+  const tarjetaHabilitada = ! $tarjeta.classList.contains("deshabilitado");
 
-  if (clickEnTarjeta) {
+  if (tarjetaHabilitada && clickEnTarjeta) {
     if ($tarjeta === $tarjetaAnterior) {
       return;
     }
@@ -120,6 +118,9 @@ function remarcarSeleccionarTurno() {
 }
 
 function deshabilitarBotonesNiveles() {
+  const $botonNivelFacil = document.querySelector("#boton-facil");
+  const $botonNivelMedio = document.querySelector("#boton-medio");
+  const $botonNivelDificil = document.querySelector("#boton-dificil");
   const botonesNiveles = [
     $botonNivelFacil,
     $botonNivelMedio,
@@ -181,9 +182,16 @@ function ganar(turnosRestantes) {
 }
 
 function perder() {
+  deshabilitarTarjetas();
   reproducirSonidoPerder();
   document.querySelector("#mensaje-final").classList.remove("oculto");
   document.querySelector("#perdedor").classList.remove("oculto");
+}
+
+function deshabilitarTarjetas(){
+  $tarjetas.forEach(($tarjeta)=>{
+    deshabilitar($tarjeta);
+  })
 }
 
 function reproducirSonidoPerder() {

@@ -42,11 +42,6 @@
                     <div class="col rounded"></div>
                 </div>
             </div>
-            <div class="alert alert-light text-center oculto" id="mensaje-ganar" role="alert">
-                <h1>¡Ganaste!</h1>
-                <p>Te quedaron <strong></strong> intentos.</p>
-                <button type="button" class="btn btn-success" id="boton-reinicio-juego">Jugar de nuevo</button>
-            </div>
         </section>
         <section class="col-12 col-md-3 d-md-flex flex-column justify-content-evenly">
             <div>
@@ -60,6 +55,16 @@
                 <p>Turnos restantes: <strong id="turnos-restantes">0</strong></p>
             </div>
         </section>
+        <div class="alert alert-light text-center oculto" id="mensaje-final" role="alert">
+            <div class="oculto" id="ganador">            
+                <h1>¡Ganaste!</h1>
+                <p>Te quedaron <strong></strong> intentos.</p></div>
+            <div class="oculto" id="perdedor">
+                <h1>¡Perdiste!</h1>
+            </div>
+
+            <button type="button" class="btn btn-success" id="boton-reinicio-juego">Jugar de nuevo</button>
+        </div>
     </main>
     <script src="./src/script.js"></script>
 </body>

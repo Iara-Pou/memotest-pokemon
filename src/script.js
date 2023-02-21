@@ -160,12 +160,16 @@ function deshabilitarTurnoUsuario() {
 
 function ganar(turnosRestantes) {
   reproducirSonidoGanar();
-  const $mensajeGanar = document.querySelector("#mensaje-ganar");
-  const cantidadIntentosRestantes = document.querySelector("#mensaje-ganar strong");
-  $mensajeGanar.classList.remove("oculto");
+  document.querySelector("#mensaje-final").classList.remove("oculto");
+  document.querySelector("#ganador").classList.remove("oculto");
+  const cantidadIntentosRestantes = document.querySelector("#mensaje-final strong");
   cantidadIntentosRestantes.textContent = turnosRestantes;
 }
 
+function perder(){
+  document.querySelector("#mensaje-final").classList.remove("oculto");
+  document.querySelector("#perdedor").classList.remove("oculto");
+}
 function reproducirSonidoGanar() {
   const audioGanar = new Audio("./audio/ganar.mp3");
   audioGanar.play();
@@ -189,5 +193,5 @@ function reiniciarTarjetas() {
 }
 
 function esconderCartelFinal() {
-  document.querySelector("#mensaje-ganar").classList.add("oculto");
+  document.querySelector("#mensaje-final").classList.add("oculto");
 }

@@ -5,10 +5,33 @@ const TOTAL_PARES = 6;
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 let contadorIntentos = 0;
+const configuracionUsuario = {
+  sonido: true,
+  musica: true,
+};
 
 iniciarJuego();
 $tablero.onclick = manejarClick;
 $botonReinicio.onclick = reiniciarPartida;
+
+document.querySelector("#boton-sonido").onclick = (e) => {
+  if(configuracionUsuario.sonido){
+    configuracionUsuario.sonido = false; 
+    e.target.classList = "bi bi-ear-fill";
+  } else {
+    configuracionUsuario.sonido = true;
+    e.target.classList = "bi bi-ear";
+  }
+};
+document.querySelector("#boton-musica").onclick = (e) => {
+  if(configuracionUsuario.musica){
+    configuracionUsuario.musica = false;
+    e.target.classList = "bi bi-volume-down-fill";
+  }else{
+    configuracionUsuario.musica = true;
+    e.target.classList = "bi bi-volume-down";
+  }
+};
 
 function manejarClick(e) {
   const $tarjeta = e.target;
@@ -16,6 +39,7 @@ function manejarClick(e) {
   const tarjetaHabilitada = !$tarjeta.classList.contains("deshabilitada");
 
   if (tarjetaHabilitada && clickEnTarjeta) {
+
     if ($tarjeta === $tarjetaAnterior) {
       return;
     }
@@ -79,7 +103,7 @@ function deshabilitar($tarjeta) {
 }
 
 function mostrarPokemon($tarjeta) {
-  reproducirSonido();
+  if(configuracionUsuario.sonido) reproducirSonido();
   $tarjeta.classList.remove("tarjeta");
 }
 
@@ -100,7 +124,8 @@ function deshabilitarTurnoUsuario() {
 }
 
 function ganar(contadorIntentos) {
-  reproducirSonidoGanar();
+  if(configuracionUsuario.musica) reproducirSonidoGanar();
+
   const $mensajeGanar = document.querySelector("#mensaje-ganar");
   const cantidadIntentos = document.querySelector("#mensaje-ganar strong");
   $mensajeGanar.classList.remove("oculto");

@@ -1,61 +1,61 @@
 .row div {
-    height: 30vh;
+  height: 25vh;
 }
 
-.pickachu{
-    background:  whitesmoke url(./img/pickachu.png) no-repeat center/70% ;
+.pickachu {
+  background: whitesmoke url(./img/pickachu.png) no-repeat center/70%;
 }
 
-.bulbasaur{
-    background:  whitesmoke url(./img/bulbasaur.png) no-repeat center/60% ;
+.bulbasaur {
+  background: whitesmoke url(./img/bulbasaur.png) no-repeat center/60%;
 }
 
-.charmander{
-    background:  whitesmoke url(./img/charmander.png) no-repeat center/70% ;
+.charmander {
+  background: whitesmoke url(./img/charmander.png) no-repeat center/70%;
 }
 
-.caterpie{
-    background:  whitesmoke url(./img/caterpie.png) no-repeat center/60% ;
+.caterpie {
+  background: whitesmoke url(./img/caterpie.png) no-repeat center/60%;
 }
 
-.pidgey{
-    background:  whitesmoke url(./img/pidgey.png) no-repeat center/60% ;
+.pidgey {
+  background: whitesmoke url(./img/pidgey.png) no-repeat center/60%;
 }
 
-.squirtle{
-    background:  whitesmoke url(./img/squirtle.png) no-repeat center/60% ;
+.squirtle {
+  background: whitesmoke url(./img/squirtle.png) no-repeat center/60%;
 }
 
-.tarjeta{
-    cursor:pointer;
-    background:  rgb(228, 2, 2) url(./img/pokeball.png) no-repeat center/50%;
-    transition: background-color 400ms ease-in;
+.tarjeta {
+  cursor: pointer;
+  background: rgb(228, 2, 2) url(./img/pokeball.png) no-repeat center/40%;
+  transition: background-color 400ms ease-in;
 }
-.tarjeta:active{
-    transform: scale(1.03);
-}
-
-.tarjeta-deshabilitada{
-    filter: brightness(0.5);
-    cursor:default;
+.tarjeta:active {
+  transform: scale(1.03);
 }
 
-#mensaje-ganar{
-    position:absolute;
-    top:45vh;
-    width: 100%;
-    animation: fade-in 0.8s;
+.tarjeta-deshabilitada {
+  filter: brightness(0.5);
+  cursor: default;
+}
+
+#mensaje-ganar {
+  position: absolute;
+  top: 45vh;
+  width: 100%;
+  animation: fade-in 0.8s;
 }
 
 @keyframes fade-in {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 100%;
-    }
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 100%;
+  }
+}
 
-.oculto{
-    display: none;
+.oculto {
+  display: none;
 }

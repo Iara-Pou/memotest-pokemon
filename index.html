@@ -10,43 +10,57 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body class="bg-dark">
     <main>
-        <div style="display: flex; gap:1em; padding:1em 1em 0;">
-            <i class="bi bi-ear" style="background-color: aliceblue; font-size:2em; border-radius:10px;"
-                id="boton-sonido"></i>
-            <i class="bi bi-volume-down" style="background-color: aliceblue; font-size:2em; border-radius:10px;"
-                id="boton-musica"></i>
-            <!-- <button style="height: fit-content;" >sonido</button>
-            <button style="height: fit-content;" >musica</button> -->
-        </div>
-        <div class="container py-3 mx-auto" id="tablero">
-            <div class="row gap-2 my-2">
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-            </div>
-            <div class="row gap-2 my-2">
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-            </div>
-            <div class="row gap-2 my-2">
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
-                <div class="col rounded"></div>
+        <div id="inicio" class="text-center p-5">
+            <h1 class="text-light display-1" style="font-family: 'Pixelify Sans', monospace;">MEMOTEST</h1>
+            <p class="text-light p-3">Elegí tu nivel:</p>
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button type="button" class="btn btn-success btn-block">Fácil</button>
+                <button type="button" class="btn btn-warning btn-block">Medio</button>
+                <button type="button" class="btn btn-danger btn-block">Difícil</button>
             </div>
         </div>
-        <div class="alert alert-light text-center oculto" id="mensaje-ganar" role="alert">
-            <h1>¡Ganaste!</h1>
-            <p>Lo hiciste en <strong></strong> intentos</p>
-            <button type="button" class="btn btn-success" id="boton-reinicio-juego">Jugar de nuevo</button>
+        <div id="juego" class="oculto">
+            <div style="display: flex; gap:1em; padding:1em 1em 0;">
+                <i class="bi bi-ear" style="background-color: aliceblue; font-size:2em; border-radius:10px;"
+                    id="boton-sonido"></i>
+                <i class="bi bi-volume-down" style="background-color: aliceblue; font-size:2em; border-radius:10px;"
+                    id="boton-musica"></i>
+                <!-- <button style="height: fit-content;" >sonido</button>
+                <button style="height: fit-content;" >musica</button> -->
+            </div>
+            <div class="container py-3 mx-auto" id="tablero">
+                <div class="row gap-2 my-2">
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                </div>
+                <div class="row gap-2 my-2">
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                </div>
+                <div class="row gap-2 my-2">
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                    <div class="col rounded"></div>
+                </div>
+            </div>
+            <div class="alert alert-light text-center oculto" id="mensaje-ganar" role="alert">
+                <h1>¡Ganaste!</h1>
+                <p>Lo hiciste en <strong></strong> intentos</p>
+                <button type="button" class="btn btn-success" id="boton-reinicio-juego">Jugar de nuevo</button>
+            </div>
         </div>
     </main>
     <script src="./src/script.js"></script>

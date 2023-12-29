@@ -1,6 +1,13 @@
 function setearNivel(id) {
   cantidadIntentosUsuario = cantidadIntentos[id];
-  console.log(cantidadIntentosUsuario);
+}
+
+function avisarCantidadTurnos(cantidad) {
+  const $cartelAvisoTurnos = document.querySelector("#contenedor-aviso-turnos");
+  $cartelAvisoTurnos.classList.remove("oculto");
+  $cartelAvisoTurnos.textContent = `Tenés ${
+    cantidad ? cantidad : "∞"
+  } intentos.`;
 }
 
 const cantidadIntentos = {
@@ -16,7 +23,8 @@ let $botones = [
 ];
 
 $botones.forEach((btn) => {
-  btn.onclick = () => {
-    setearNivel(event.target.id);
+  btn.onclick = (e) => {
+    setearNivel(e.target.id);
+    avisarCantidadTurnos(cantidadIntentosUsuario);
   };
 });

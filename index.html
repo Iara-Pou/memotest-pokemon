@@ -18,14 +18,16 @@
 
 <body class="bg-dark">
     <main>
-        <div id="inicio" class="text-center p-5">
+        <div id="inicio" class="d-grid text-center p-5 gap-3">
             <h1 class="text-light display-1" style="font-family: 'Pixelify Sans', monospace;">MEMOTEST</h1>
-            <p class="text-light p-3">Elegí tu nivel:</p>
+            <p class="text-light">Elegí tu nivel:</p>
             <div class="d-grid gap-2 col-4 mx-auto">
                 <button type="button" class="btn btn-success btn-block" id="boton-nivel-facil">Fácil</button>
                 <button type="button" class="btn btn-warning btn-block" id="boton-nivel-medio">Medio</button>
                 <button type="button" class="btn btn-danger btn-block" id="boton-nivel-dificil">Difícil</button>
             </div>
+            <div class="alert alert-light mt-2 col-5 mx-auto oculto" id="contenedor-aviso-turnos">
+                aa</div>
         </div>
         <div id="juego" class="oculto">
             <div style="display: flex; gap:1em; padding:1em 1em 0;">

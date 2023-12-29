@@ -1,5 +1,5 @@
 function setearNivel(id) {
-  cantidadIntentosUsuario = cantidadIntentos[id];
+  cantidadIntentosUsuario = CANTIDAD_INTENTOS[id];
 }
 
 function avisarCantidadTurnos(cantidad) {
@@ -10,21 +10,32 @@ function avisarCantidadTurnos(cantidad) {
   } intentos.`;
 }
 
-const cantidadIntentos = {
+function habilitarJuego() {
+  $botonInicioJuego.classList.remove("disabled");
+}
+
+const $botonesNiveles = [
+  document.querySelector("#boton-nivel-facil"),
+  document.querySelector("#boton-nivel-medio"),
+  document.querySelector("#boton-nivel-dificil"),
+];
+const $botonInicioJuego = document.querySelector("#boton-inicio-juego");
+
+const CANTIDAD_INTENTOS = {
   "boton-nivel-facil": false,
   "boton-nivel-medio": 15,
   "boton-nivel-dificil": 20,
 };
 
-let $botones = [
-  document.querySelector("#boton-nivel-facil"),
-  document.querySelector("#boton-nivel-medio"),
-  document.querySelector("#boton-nivel-dificil"),
-];
-
-$botones.forEach((btn) => {
+$botonesNiveles.forEach((btn) => {
   btn.onclick = (e) => {
     setearNivel(e.target.id);
     avisarCantidadTurnos(cantidadIntentosUsuario);
+    habilitarJuego();
   };
 });
+
+$botonInicioJuego.onclick = () => {
+  document.querySelector("#pantalla-inicio").classList.add("oculto");
+  document.querySelector("#pantalla-juego").classList.remove("oculto");
+};

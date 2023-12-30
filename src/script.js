@@ -81,8 +81,10 @@ function manejarTurnosRestantes() {
   cantidadIntentosUsuario--;
   mostrarTurnosRestantes();
 
+  console.log(cantidadIntentosUsuario);
+  console.log(cantidadIntentosUsuario == 0);
   if (cantidadIntentosUsuario == 0) {
-    ganar("mentira, perdiste");
+    perder();
   }
 }
 
@@ -148,6 +150,11 @@ function ganar(contadorIntentos) {
   const cantidadIntentos = document.querySelector("#mensaje-ganar strong");
   $mensajeGanar.classList.remove("oculto");
   cantidadIntentos.textContent = contadorIntentos;
+}
+
+function perder() {
+  const $mensajePerder = document.querySelector("#mensaje-perder");
+  $mensajePerder.classList.remove("oculto");
 }
 
 function reproducirSonidoGanar() {

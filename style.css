@@ -40,7 +40,8 @@
   cursor: default;
 }
 
-#mensaje-ganar {
+#mensaje-ganar,
+#mensaje-perder {
   position: absolute;
   top: 45vh;
   width: 100%;

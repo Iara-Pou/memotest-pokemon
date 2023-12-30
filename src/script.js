@@ -2,15 +2,16 @@ const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
 const $botonReinicio = document.querySelector("#boton-reinicio-juego");
 const TOTAL_PARES = 6;
-let $tarjetaAnterior = null;
-let contadorParesHallados = 0;
-let contadorIntentos = 0;
-let cantidadIntentosUsuario = false;
-
 const configuracionUsuario = {
   sonido: true,
   musica: true,
 };
+
+let $tarjetaAnterior = null;
+let contadorParesHallados = 0;
+let contadorIntentos = 0;
+let cantidadIntentosUsuario = false;
+let usuarioConTurnos = cantidadIntentosUsuario !== false;
 
 iniciarJuego();
 $tablero.onclick = manejarClick;
@@ -72,7 +73,22 @@ function manejarClick(e) {
 
     deshabilitarTurnoUsuario();
     contadorIntentos++;
+    if (cantidadIntentosUsuario !== false) manejarTurnosRestantes();
   }
+}
+
+function manejarTurnosRestantes() {
+  cantidadIntentosUsuario--;
+  mostrarTurnosRestantes();
+
+  if (cantidadIntentosUsuario == 0) {
+    ganar("mentira, perdiste");
+  }
+}
+
+function mostrarTurnosRestantes() {
+  document.querySelector("#cantidad-intentos").textContent =
+    cantidadIntentosUsuario;
 }
 
 function iniciarJuego() {

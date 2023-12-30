@@ -24,7 +24,7 @@ const $botonInicioJuego = document.querySelector("#boton-inicio-juego");
 const CANTIDAD_INTENTOS = {
   "boton-nivel-facil": false,
   "boton-nivel-medio": 15,
-  "boton-nivel-dificil": 2,
+  "boton-nivel-dificil": 20,
 };
 
 $botonesNiveles.forEach((btn) => {

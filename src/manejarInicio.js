@@ -40,5 +40,5 @@ $botonInicioJuego.onclick = () => {
   document.querySelector("#pantalla-juego").classList.remove("oculto");
   //muestra intentos
   document.querySelector("#cantidad-intentos").textContent =
-    cantidadIntentosUsuario.toString() | "infinitos";
+    cantidadIntentosUsuario ? cantidadIntentosUsuario : "∞";
 };

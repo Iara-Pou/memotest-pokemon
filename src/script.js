@@ -39,14 +39,16 @@ document.querySelector("#boton-musica").onclick = (e) => {
 
 function deshabilitarTarjetas() {
   $tarjetas.forEach((tarjeta) => {
-    tarjeta.classList.add("deshabilitada");
+    tarjeta.classList.add("tarjeta-deshabilitada");
   });
 }
 
 function manejarClick(e) {
   const $tarjeta = e.target;
   const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
-  const tarjetaHabilitada = !$tarjeta.classList.contains("deshabilitada");
+  const tarjetaHabilitada = !$tarjeta.classList.contains(
+    "tarjeta-deshabilitada"
+  );
 
   if (tarjetaHabilitada && clickEnTarjeta) {
     if ($tarjeta === $tarjetaAnterior) {

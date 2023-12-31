@@ -39,6 +39,9 @@
   filter: brightness(0.5);
   cursor: default;
 }
+.tarjeta-deshabilitada:active {
+  transform: scale(1);
+}
 
 #mensaje-ganar,
 #mensaje-perder {

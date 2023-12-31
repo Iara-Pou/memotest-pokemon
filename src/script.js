@@ -37,6 +37,12 @@ document.querySelector("#boton-musica").onclick = (e) => {
   }
 };
 
+function deshabilitarTarjetas() {
+  $tarjetas.forEach((tarjeta) => {
+    tarjeta.classList.add("deshabilitada");
+  });
+}
+
 function manejarClick(e) {
   const $tarjeta = e.target;
   const clickEnTarjeta = $tarjeta.classList.contains("tarjeta");
@@ -155,6 +161,7 @@ function ganar(contadorIntentos) {
 function perder() {
   const $mensajePerder = document.querySelector("#mensaje-perder");
   $mensajePerder.classList.remove("oculto");
+  deshabilitarTarjetas();
 }
 
 function reproducirSonidoGanar() {

@@ -101,8 +101,6 @@ function mostrarTurnosRestantes() {
 }
 
 function iniciarJuego() {
-  //si está en fácil cantidadIntentosUsuario tiene como valor false, sino, tiene número de turnos.
-  usuarioTieneTurnos = cantidadIntentosUsuario !== false;
   const POKEMONES = [
     "pickachu",
     "bulbasaur",

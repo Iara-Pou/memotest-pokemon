@@ -41,4 +41,7 @@ $botonInicioJuego.onclick = () => {
   //muestra intentos
   document.querySelector("#cantidad-intentos").textContent =
     cantidadIntentosUsuario ? cantidadIntentosUsuario : "∞";
+
+  //si está en fácil cantidadIntentosUsuario tiene como valor false, sino, tiene número de turnos.
+  usuarioTieneTurnos = cantidadIntentosUsuario !== false;
 };

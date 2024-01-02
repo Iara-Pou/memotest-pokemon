@@ -11,7 +11,7 @@ let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
 let contadorIntentos = 0;
 let cantidadIntentosUsuario = false;
-let usuarioConTurnos = cantidadIntentosUsuario !== false;
+let usuarioTieneTurnos;
 
 iniciarJuego();
 $tablero.onclick = manejarClick;
@@ -86,8 +86,7 @@ function manejarClick(e) {
 
     deshabilitarTurnoUsuario();
     contadorIntentos++;
-    //si no está en fácil donde cantidadIntentos es 0, cuenta los turnos.
-    if (cantidadIntentosUsuario !== false) manejarTurnosRestantes();
+    if (usuarioTieneTurnos) manejarTurnosRestantes();
   }
 }
 
@@ -102,6 +101,8 @@ function mostrarTurnosRestantes() {
 }
 
 function iniciarJuego() {
+  //si está en fácil cantidadIntentosUsuario tiene como valor false, sino, tiene número de turnos.
+  usuarioTieneTurnos = cantidadIntentosUsuario !== false;
   const POKEMONES = [
     "pickachu",
     "bulbasaur",

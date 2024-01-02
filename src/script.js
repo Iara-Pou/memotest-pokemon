@@ -69,6 +69,11 @@ function manejarClick(e) {
         contadorParesHallados++;
         if (contadorParesHallados === TOTAL_PARES) {
           ganar(contadorIntentos);
+        } else if (
+          cantidadIntentosUsuario === 0 &&
+          contadorParesHallados !== TOTAL_PARES
+        ) {
+          perder();
         }
       }, 500);
     } else if ($tarjeta.className !== $tarjetaAnterior.className) {
@@ -81,6 +86,7 @@ function manejarClick(e) {
 
     deshabilitarTurnoUsuario();
     contadorIntentos++;
+    //si no está en fácil donde cantidadIntentos es 0, cuenta los turnos.
     if (cantidadIntentosUsuario !== false) manejarTurnosRestantes();
   }
 }
@@ -88,12 +94,6 @@ function manejarClick(e) {
 function manejarTurnosRestantes() {
   cantidadIntentosUsuario--;
   mostrarTurnosRestantes();
-
-  console.log(cantidadIntentosUsuario);
-  console.log(cantidadIntentosUsuario == 0);
-  if (cantidadIntentosUsuario == 0) {
-    perder();
-  }
 }
 
 function mostrarTurnosRestantes() {

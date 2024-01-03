@@ -155,17 +155,24 @@ function deshabilitarTurnoUsuario() {
 
 function ganar(contadorIntentos) {
   if (configuracionUsuario.musica) reproducirSonidoGanar();
-
-  const $mensajeGanar = document.querySelector("#mensaje-ganar");
-  const cantidadIntentos = document.querySelector("#mensaje-ganar strong");
-  $mensajeGanar.classList.remove("oculto");
-  cantidadIntentos.textContent = contadorIntentos;
+  mostrarResultadoPartida(
+    "¡Ganaste!",
+    "Ganaste en " + contadorIntentos + " intentos."
+  );
 }
 
 function perder() {
-  const $mensajePerder = document.querySelector("#mensaje-perder");
-  $mensajePerder.classList.remove("oculto");
+  mostrarResultadoPartida("¡Perdiste!", "Te quedaste sin intentos.");
   deshabilitarTarjetas();
+}
+
+function mostrarResultadoPartida(titulo, mensajeResultado) {
+  document.querySelector("#mensaje-resultado").classList.remove("oculto");
+  document.querySelector("#mensaje-resultado #resultado-titulo").textContent =
+    titulo;
+  document.querySelector(
+    "#mensaje-resultado #resultado-informacion-intentos"
+  ).textContent = mensajeResultado;
 }
 
 function reproducirSonidoGanar() {

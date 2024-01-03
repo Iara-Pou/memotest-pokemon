@@ -43,8 +43,7 @@
   transform: scale(1);
 }
 
-#mensaje-ganar,
-#mensaje-perder {
+#mensaje-resultado {
   position: absolute;
   top: 45vh;
   width: 100%;

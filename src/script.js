@@ -65,16 +65,7 @@ function manejarClick(e) {
         deshabilitar($tarjetaAnterior);
         deshabilitar($tarjeta);
         $tarjetaAnterior = null;
-
         contadorParesHallados++;
-        if (contadorParesHallados === TOTAL_PARES) {
-          ganar(contadorIntentos);
-        } else if (
-          cantidadIntentosUsuario === 0 &&
-          contadorParesHallados !== TOTAL_PARES
-        ) {
-          perder();
-        }
       }, 500);
     } else if ($tarjeta.className !== $tarjetaAnterior.className) {
       setTimeout(() => {
@@ -87,6 +78,18 @@ function manejarClick(e) {
     deshabilitarTurnoUsuario();
     contadorIntentos++;
     if (usuarioTieneTurnos) manejarTurnosRestantes();
+
+    //ganar o perder
+    setTimeout(() => {
+      if (
+        cantidadIntentosUsuario === 0 &&
+        contadorParesHallados !== TOTAL_PARES
+      ) {
+        perder();
+      } else if (contadorParesHallados === TOTAL_PARES) {
+        ganar(contadorIntentos);
+      }
+    }, 500);
   }
 }
 

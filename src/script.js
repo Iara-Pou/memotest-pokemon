@@ -162,6 +162,7 @@ function ganar(contadorIntentos) {
 }
 
 function perder() {
+  if (configuracionUsuario.musica) reproducirSonidoPerder();
   mostrarResultadoPartida("¡Perdiste!", "Te quedaste sin intentos.");
   deshabilitarTarjetas();
 }
@@ -178,6 +179,11 @@ function mostrarResultadoPartida(titulo, mensajeResultado) {
 function reproducirSonidoGanar() {
   const audioGanar = new Audio("./audio/ganar.mp3");
   audioGanar.play();
+}
+
+function reproducirSonidoPerder() {
+  const audioPerder = new Audio("./audio/perder.mp3");
+  audioPerder.play();
 }
 
 function reiniciarPartida() {

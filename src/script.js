@@ -1,6 +1,5 @@
 const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
-const $botonReinicio = document.querySelector("#boton-reinicio-juego");
 const TOTAL_PARES = 6;
 const configuracionUsuario = {
   sonido: true,
@@ -15,7 +14,6 @@ let usuarioTieneTurnos;
 
 iniciarJuego();
 $tablero.onclick = manejarClick;
-$botonReinicio.onclick = reiniciarPartida;
 
 document.querySelector("#boton-sonido").onclick = (e) => {
   if (configuracionUsuario.sonido) {
@@ -184,25 +182,4 @@ function reproducirSonidoGanar() {
 function reproducirSonidoPerder() {
   const audioPerder = new Audio("./audio/perder.mp3");
   audioPerder.play();
-}
-
-function reiniciarPartida() {
-  esconderCartelFinal();
-  reiniciarValoresIniciales();
-  iniciarJuego();
-}
-
-function reiniciarValoresIniciales() {
-  $tarjetaAnterior = null;
-  contadorParesHallados = 0;
-  contadorIntentos = 0;
-  reiniciarTarjetas();
-}
-
-function reiniciarTarjetas() {
-  $tarjetas.forEach((tarjeta) => (tarjeta.className = "col rounded"));
-}
-
-function esconderCartelFinal() {
-  document.querySelector("#mensaje-ganar").classList.add("oculto");
 }

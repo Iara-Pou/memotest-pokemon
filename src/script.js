@@ -12,7 +12,6 @@ let contadorIntentos = 0;
 let cantidadIntentosUsuario = false;
 let usuarioTieneTurnos;
 
-iniciarJuego();
 $tablero.onclick = manejarClick;
 
 document.querySelector("#boton-sonido").onclick = (e) => {

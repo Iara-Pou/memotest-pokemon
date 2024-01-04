@@ -44,4 +44,5 @@ $botonInicioJuego.onclick = () => {
 
   //si está en fácil cantidadIntentosUsuario tiene como valor false, sino, tiene número de turnos.
   usuarioTieneTurnos = cantidadIntentosUsuario !== false;
+  iniciarJuego();
 };

@@ -37,5 +37,6 @@ function mostrarInicio() {
   document.querySelector("#pantalla-inicio").classList.remove("oculto");
 }
 
-const $botonReinicio = document.querySelector("#boton-reinicio-juego");
-$botonReinicio.onclick = reiniciarPartida;
+document.querySelectorAll(".boton-reinicio").forEach((boton) => {
+  boton.onclick = reiniciarPartida;
+});

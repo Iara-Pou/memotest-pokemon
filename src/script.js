@@ -1,9 +1,7 @@
 const $tablero = document.querySelector("#tablero");
 const $tarjetas = $tablero.querySelectorAll(".col");
 const TOTAL_PARES = 6;
-const configuracionUsuario = {
-  sonido: true,
-};
+let sonidoActivado = true;
 
 let $tarjetaAnterior = null;
 let contadorParesHallados = 0;
@@ -14,11 +12,11 @@ let usuarioTieneTurnos;
 $tablero.onclick = manejarClick;
 
 document.querySelector("#boton-sonido").onclick = (e) => {
-  if (configuracionUsuario.sonido) {
-    configuracionUsuario.sonido = false;
+  if (sonidoActivado) {
+    sonidoActivado = false;
     e.target.classList = "bi bi-volume-down-fill";
   } else {
-    configuracionUsuario.sonido = true;
+    sonidoActivado = true;
     e.target.classList = "bi bi-volume-down";
   }
 };
@@ -119,7 +117,7 @@ function deshabilitar($tarjeta) {
 }
 
 function mostrarPokemon($tarjeta) {
-  if (configuracionUsuario.sonido) reproducirSonido();
+  if (sonidoActivado) reproducirSonido();
   $tarjeta.classList.remove("tarjeta");
 }
 
@@ -140,7 +138,7 @@ function deshabilitarTurnoUsuario() {
 }
 
 function ganar(contadorIntentos) {
-  if (configuracionUsuario.sonido) reproducirSonidoGanar();
+  if (sonidoActivado) reproducirSonidoGanar();
   mostrarResultadoPartida(
     "¡Ganaste!",
     "Ganaste en " + contadorIntentos + " intentos."
@@ -148,7 +146,7 @@ function ganar(contadorIntentos) {
 }
 
 function perder() {
-  if (configuracionUsuario.sonido) reproducirSonidoPerder();
+  if (sonidoActivado) reproducirSonidoPerder();
   mostrarResultadoPartida("¡Perdiste!", "Te quedaste sin intentos.");
   deshabilitarTarjetas();
 }

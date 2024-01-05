@@ -1,3 +1,10 @@
+#boton-sonido {
+  background-color: aliceblue;
+  font-size: 2em;
+  border-radius: 10px;
+  padding: 0.1em;
+}
+
 .row div {
   height: 25vh;
 }

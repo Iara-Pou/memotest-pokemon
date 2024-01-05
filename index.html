@@ -32,15 +32,16 @@
             <button type="button" id="boton-inicio-juego"
                 class="btn btn-outline-light col-md-5 mx-auto fw-bold text-uppercase disabled">Jugar</button>
         </div>
-        <div id="pantalla-juego" class="oculto">
-            <div class="d-flex justify-content-between pt-3 px-5 gap-3">
-                <span class="d-flex align-items-end gap-2">
+        <div id="pantalla-juego" class="oculto d-flex flex-column justify-content-center align-items-center"
+            style="min-height: 100vh;">
+            <div class="d-flex pt-3 px-5 gap-4">
+                <span class="d-flex align-items-end gap-4">
                     <i class="bi bi-volume-down" id="boton-sonido"></i>
                     <p class="text-light text-uppercase">cantidad de intentos : <span id="cantidad-intentos"></span></p>
                 </span>
                 <button type="button" class="btn btn-success boton-reinicio">Reiniciar</button>
             </div>
-            <div class="container py-3 mx-auto" id="tablero">
+            <div class="container-lg py-3 mx-auto" id="tablero">
                 <div class="row gap-2 my-2">
                     <div class="col rounded"></div>
                     <div class="col rounded"></div>

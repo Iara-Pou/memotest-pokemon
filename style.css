@@ -53,9 +53,10 @@
 
 #mensaje-resultado {
   position: absolute;
-  top: 45vh;
+  top: 40vh;
   width: 100%;
   animation: fade-in 0.8s;
+  border-radius: 0 !important;
 }
 
 @keyframes fade-in {

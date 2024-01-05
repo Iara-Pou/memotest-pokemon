@@ -18,17 +18,19 @@
 
 <body class="bg-dark">
     <main>
-        <div id="pantalla-inicio" class="d-grid text-center p-5 gap-3">
+        <div id="pantalla-inicio"
+            class="p-5 gap-3 col-md-12 d-flex flex-column justify-content-center align-items-center"
+            style="min-height: 100vh;">
             <h1 class="text-light display-1" style="font-family: 'Pixelify Sans', monospace;">MEMOTEST</h1>
             <p class="text-light">Elegí tu nivel:</p>
-            <div class="d-grid gap-2 col-4 mx-auto">
+            <div class="d-grid gap-2 col-12 col-md-4 mx-auto">
                 <button type="button" class="btn btn-success btn-block" id="boton-nivel-facil">Fácil</button>
                 <button type="button" class="btn btn-warning btn-block" id="boton-nivel-medio">Medio</button>
                 <button type="button" class="btn btn-danger btn-block" id="boton-nivel-dificil">Difícil</button>
             </div>
-            <div class="alert alert-light mt-2 col-5 mx-auto oculto" id="contenedor-aviso-turnos"></div>
+            <div class="alert alert-light mt-2 col-md-5 mx-auto oculto text-center" id="contenedor-aviso-turnos"></div>
             <button type="button" id="boton-inicio-juego"
-                class="btn btn-outline-light col-5 mx-auto fw-bold text-uppercase disabled">jugar</button>
+                class="btn btn-outline-light col-md-5 mx-auto fw-bold text-uppercase disabled">Jugar</button>
         </div>
         <div id="pantalla-juego" class="oculto">
             <div style="display: flex; gap:1em; padding:1em 1em 0;">

@@ -3,7 +3,6 @@ const $tarjetas = $tablero.querySelectorAll(".col");
 const TOTAL_PARES = 6;
 const configuracionUsuario = {
   sonido: true,
-  musica: true,
 };
 
 let $tarjetaAnterior = null;
@@ -17,19 +16,9 @@ $tablero.onclick = manejarClick;
 document.querySelector("#boton-sonido").onclick = (e) => {
   if (configuracionUsuario.sonido) {
     configuracionUsuario.sonido = false;
-    e.target.classList = "bi bi-ear-fill";
-  } else {
-    configuracionUsuario.sonido = true;
-    e.target.classList = "bi bi-ear";
-  }
-};
-
-document.querySelector("#boton-musica").onclick = (e) => {
-  if (configuracionUsuario.musica) {
-    configuracionUsuario.musica = false;
     e.target.classList = "bi bi-volume-down-fill";
   } else {
-    configuracionUsuario.musica = true;
+    configuracionUsuario.sonido = true;
     e.target.classList = "bi bi-volume-down";
   }
 };
@@ -151,7 +140,7 @@ function deshabilitarTurnoUsuario() {
 }
 
 function ganar(contadorIntentos) {
-  if (configuracionUsuario.musica) reproducirSonidoGanar();
+  if (configuracionUsuario.sonido) reproducirSonidoGanar();
   mostrarResultadoPartida(
     "¡Ganaste!",
     "Ganaste en " + contadorIntentos + " intentos."
@@ -159,7 +148,7 @@ function ganar(contadorIntentos) {
 }
 
 function perder() {
-  if (configuracionUsuario.musica) reproducirSonidoPerder();
+  if (configuracionUsuario.sonido) reproducirSonidoPerder();
   mostrarResultadoPartida("¡Perdiste!", "Te quedaste sin intentos.");
   deshabilitarTarjetas();
 }

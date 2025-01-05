@@ -4,7 +4,8 @@
   "description": "juego de memoria hecho con pokemones",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir dist && xcopy index.html dist /Y && xcopy style.css dist /Y && xcopy /E /I audio dist\\audio && xcopy /E /I img dist\\img && mkdir dist\\vendor && mkdir dist\\vendor\\bootstrap && xcopy /E /I node_modules\\bootstrap\\dist dist\\vendor\\bootstrap && mkdir dist\\vendor\\bootstrap-icons && xcopy /E /I node_modules\\bootstrap-icons\\font dist\\vendor\\bootstrap-icons"
   },
   "repository": {
     "type": "git",
